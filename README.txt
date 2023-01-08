@@ -97,3 +97,5 @@ scrape_configs:
 
 docker-compose up -d
 
+// Change password Grafana with Docker.
+ADMIN_PASSWORD="{password-set}";CONTAINER_ID=$(docker ps -qf "name=^grafana$");docker exec -it $CONTAINER_ID grafana-cli admin reset-admin-password $ADMIN_PASSWORD
