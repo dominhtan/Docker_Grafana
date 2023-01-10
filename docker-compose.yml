@@ -39,7 +39,9 @@ services:
     ports:
       - 9090:9090
     volumes:
+      - ./prometheus:/root/monitor_docker
       - prometheus-data:/prometheus
+    command: --web.enable-lifecycle  --config.file=/root/monitor_docker/prometheus.yml
 volumes:
   grafana-data:
   prometheus-data:
