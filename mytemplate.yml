@@ -3,12 +3,11 @@
      *Alert:* 🔥 {{ .Annotations.title }}{{ if .Labels.severity }} - `{{ .Labels.severity }}`{{ end }}
      *Alert ID:* {{.Labels.alertname}}
      *Fired Time:* {{.StartsAt}}
-     *Value Instance:* {{.Values}}
+     *End Time:* {{.EndsAt}}
+     *Value Metrics:* {{.Values}}
      *Description:* {{ .Annotations.description }}
      *Details:* 🔔
        {{ range .Labels.SortedPairs }} • *{{ .Name }}:* `{{ .Value }}`
        {{ end }}
      {{ end }}
 {{ end }}
-
-// AlertManager in Slack
