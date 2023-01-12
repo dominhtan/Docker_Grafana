@@ -25,5 +25,5 @@ docker-compose up -d
 // Change password Grafana with Docker.
 ADMIN_PASSWORD="{password-set}";CONTAINER_ID=$(docker ps -qf "name=^grafana$");docker exec -it $CONTAINER_ID grafana-cli admin reset-admin-password $ADMIN_PASSWORD
 
-// Query Metrics CPU
+// Query Metrics CPU in 1 minutes
 (avg by (instance) (irate(node_cpu_seconds_total{instance="150.95.112.52:9100",job="node_exporter_centos",mode="user"}[1m])) * 100)
